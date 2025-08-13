@@ -717,20 +717,20 @@ PR и медиа
       </label>
       <span id="filename_resume">Файл не выбран</span>
     </div>
+    <div class="form-group">
+      <label class="custom-file-upload">
+        <span>Загрузить личное фото / Photo</span>
+        {{ form.resume }}
+        <svg width="24" height="24" ...>...</svg>
+      </label>
+      <span id="filename_resume">Файл не выбран</span>
+    </div>
   </div>
 
   <p class="title_form">Согласия</p>
   <div class="form-group2">
     <label>{{ form.confirm_data }} <span>{{ form.confirm_data.label }} <span style="color:red">*</span></span></label>
     <label>{{ form.consent_personal_data }} <span>{{ form.consent_personal_data.label }} <span style="color:red">*</span></span></label>
-      <label for="{{ form.consent_rules.id_for_label }}">
-        {{ form.consent_rules }}
-        <span>
-          Я ознакомлен(а) с
-          <a href="/static/document/ustav_ru.pdf" target="_blank">уставом</a>
-          и этическим кодексом Ассоциации и обязуюсь их соблюдать. <span style="color:red">*</span>
-        </span>
-      </label>
   </div>
 
   <div class="soglasie">

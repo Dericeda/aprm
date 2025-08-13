@@ -7,8 +7,6 @@ SECRET_KEY = 'django-insecure-123'
 DEBUG = True
 ALLOWED_HOSTS = ['*']
 
-
-
 # Языки
 LANGUAGE_CODE = 'ru'
 
@@ -18,6 +16,14 @@ LANGUAGES = [
 ]
 
 MODELTRANSLATION_DEFAULT_LANGUAGE = 'ru'
+MODELTRANSLATION_LANGUAGES = ('ru', 'kk')
+MODELTRANSLATION_FALLBACK_LANGUAGES = ('ru',)
+
+# Настройки для modeltranslation
+TRANSLATABLE_MODEL_MODULES = [
+    'myapp.translation',
+    'news.translation',
+]
 
 LOCALE_PATHS = [
     BASE_DIR / 'locale',
@@ -88,14 +94,16 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-# Статика и медиа
+# Статика и медиа - ИСПРАВЛЕНО
 STATIC_URL = '/static/'
 
-# Убрал STATICFILES_DIRS, чтобы не конфликтовало с STATIC_ROOT
-# Используй STATICFILES_DIRS только если у тебя есть отдельная директория с исходными статическими файлами (например, BASE_DIR / 'static')
-# STATICFILES_DIRS = [BASE_DIR / 'static']
+# Используем существующую папку staticfiles
+STATICFILES_DIRS = [
+    BASE_DIR / 'staticfiles',
+]
 
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+# Для продакшена (когда DEBUG=False)
+STATIC_ROOT = BASE_DIR / 'collected_static'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'

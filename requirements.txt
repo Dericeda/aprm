@@ -3,3 +3,4 @@ pillow
 requests
 django-admin-interface
 django-colorfield
+django-modeltranslation=0.19.14
